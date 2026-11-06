@@ -27,7 +27,11 @@ dependencies = [
     # nooa.unifiedllm subpackages — pull their formerly-external deps in.
     # >=1.97.0: routes GPT-5.4 tool calls through Responses and replays reasoning_items;
     # also stays past CVE-2026-49468 and the yanked 1.82.7/1.82.8 backdoor.
-    "litellm>=1.97.0",
+    # LiteLLM: every release from 1.106.0.dev0 on (dev, rc and final, 1.106 and later) is banned. This is a
+    # superset of upstream's two constraints, the earlier <1.106.0 cap and fb629cb5's exclusion of the verified
+    # broken 1.106.0-1.106.7 / 1.107.0 prereleases / 1.108.0-1.108.1 (optional MCP dependencies imported for ordinary
+    # tool calls; fixed upstream by https://github.com/BerriAI/litellm/pull/45961). Lift the cap only for a verified fix.
+    "litellm>=1.97.0,<1.106.0.dev0",
     # from mcp-nemo-oo-agents (now internal)
     "httpx>=0.27.0",
     "openinference-instrumentation-litellm>=0.1.30",

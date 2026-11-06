@@ -6,6 +6,9 @@ to follow semantic versioning.
 
 ## [Unreleased]
 
+- Core and nooa-acp ban every LiteLLM release from 1.106.0.dev0 on (dev, rc and final, 1.106 and later):
+  `litellm>=1.97.0,<1.106.0.dev0` (nooa-acp: `!=1.95.0,<1.106.0.dev0`), a superset of upstream's exclusions of the
+  releases affected by the optional-MCP import regression.
 - Windows: WSL 2 is the supported way to run nooa on Windows. Native Windows is
   unsupported: `import nooa` raises `UnsupportedPlatformError` (an
   `ImportError`) and the `nooa` command exits with one line pointing to WSL 2,
