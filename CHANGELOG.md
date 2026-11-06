@@ -6,10 +6,9 @@ to follow semantic versioning.
 
 ## [Unreleased]
 
-- Core installs now exclude the individually verified LiteLLM releases affected
-  by the optional-MCP import regression (1.106.0–1.106.7, 1.108.0–1.108.1, and
-  affected prereleases). Future patch and security releases remain eligible;
-  there is no upper version bound.
+- Core and nooa-acp ban every LiteLLM release from 1.106.0.dev0 on (dev, rc and final, 1.106 and later):
+  `litellm>=1.97.0,<1.106.0.dev0` (nooa-acp: `!=1.95.0,<1.106.0.dev0`), a superset of upstream's exclusions of the
+  releases affected by the optional-MCP import regression.
 - Snapshot save and restore now detect cycles explicitly and cap nesting at 200
   levels (`MAX_SNAPSHOT_DEPTH`), whatever the caller's stack depth. Errors for
   cycles, too-deep values, unsupported types and non-string dict keys name the
