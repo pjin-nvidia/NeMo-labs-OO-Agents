@@ -6,6 +6,10 @@ to follow semantic versioning.
 
 ## [Unreleased]
 
+- Core installs now exclude the individually verified LiteLLM releases affected
+  by the optional-MCP import regression (1.106.0–1.106.7, 1.108.0–1.108.1, and
+  affected prereleases). Future patch and security releases remain eligible;
+  there is no upper version bound.
 - Snapshot save and restore now detect cycles explicitly and cap nesting at 200
   levels (`MAX_SNAPSHOT_DEPTH`), whatever the caller's stack depth. Errors for
   cycles, too-deep values, unsupported types and non-string dict keys name the
